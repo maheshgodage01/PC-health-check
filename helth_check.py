@@ -14,3 +14,6 @@ if disk_usage("/") and cpu_usage():
     print("Everything is OK!")
 else:
     print("High Resource Using!")
+
+
+print("Finished...")
