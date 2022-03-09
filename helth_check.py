@@ -1,6 +1,11 @@
 import shutil
 import psutil
 import socket
+import os
+
+def check_reboot():
+    '''returns true if restart avaialabe false otherwise'''
+    return os.path.exists('/run/reboot-required')
 
 def disk_usage(disk):
     du = shutil.disk_usage(disk)
@@ -29,4 +34,8 @@ if no_network():
     print("Network is Available")
 else:
     print("Network is not available")
+if check_reboot():
+    print("reboot is avaialable...")
+else:
+    print("no any reboot is available...")
 print("Finished...")
